@@ -1,0 +1,91 @@
+create table tt4(rollno int,name varchar(20),age int,marks int);
+
+
+
+
+insert into tt4 values(1,'siya',23,345);
+insert into tt4 values(2,'jia',23,515);
+insert into tt4 values(3,'emma',23,215);
+
+select * from tt4;
+
+			
+ROLLNO	NAME	AGE	MARKS
+1	siya	23	345
+2	jia	23	515
+3	emma	23	215
+
+
+delete from tt4 where rollno=2;
+select * from tt4;
+ROLLNO	NAME	AGE	MARKS
+1	siya	23	345
+3	emma	23	215
+
+
+
+update tt4 set marks=400 where rollno=3;
+select * from tt4;
+ROLLNO	NAME	AGE	MARKS
+1	siya	23	345
+3	emma	23	400
+
+
+
+alter table tt4 add city varchar(20);
+select * from tt4;
+ROLLNO	NAME	AGE	MARKS	CITY
+1	siya	23	345	-
+3	emma	23	400	- 
+
+
+
+insert into tt4 values(4,'seeta',20,315);
+insert into tt4 values(5,'geeta',21,595);
+insert into tt4 values(6,'neeta',21,595,'pune');
+ROLLNO	NAME	AGE	MARKS	CITY
+1	siya	23	345	-
+4	seeta	20	315	-
+3	emma	23	400	-
+5	geeta	21	595	-
+6	neeta	21	595	pune
+
+
+select max(marks)from tt4;
+MAX(MARKS)
+595
+
+
+select min(marks)from tt4;
+MIN(MARKS)
+315
+
+
+select avg(marks)from tt4;
+AVG(MARKS)
+450
+
+select count(rollno)from tt4;
+COUNT(ROLLNO)
+5
+
+describe tt4;
+Table	Column	Data Type	Length	Precision	Scale	Primary Key	Nullable	Default	Comment
+TT4	ROLLNO	Number	- 	- 	0	- 	nullable	- 	-
+ 	NAME	Varchar2	20	- 	- 	- 	nullable	- 	-
+ 	AGE	Number	- 	- 	0	- 	nullable	- 	-
+ 	MARKS	Number	- 	- 	0	- 	nullable	- 	-
+ 	CITY	Varchar2	20	- 	- 	- 	nullable	- 	-
+		1 - 5 		
+			
+
+
+
+truncate table tt4;
+select * from tt4;
+no data found     
+
+drop table tt4;
+table dropped
+select * from tt4;
+	ORA-00942: table or view does not exist
